@@ -40,39 +40,37 @@
                     <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">From heart to heart</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Relay Encouragement Program</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Members</a></li>
-                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-4" href="#">Gallery</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Gallery</a></li>
                 </ul>
                 <!-- Submenu 1 -->
-                <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Vegetables">
+                <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="From-heart-to-heart">
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2018</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2019</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Special</a></li>
                 </ul>
                 <!-- Submenu 2 -->
-                <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Fruits">
+                <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Relay Encouragement Program">
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2018</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2019</a></li>
                 </ul>
                 <!-- Submenu 3 -->
-                <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Grains">
+                <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Members">
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Buckwheat</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Millet</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Quinoa</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Wild Rice</a></li>
                     <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Durum Wheat</a></li>
                 </ul>
-                <!-- Submenu 4 -->
-                <ul data-menu="submenu-4" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Drinks">
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Grain Mylks</a></li>
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Seed Mylks</a></li>
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Nut Mylks</a></li>
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Nutri Drinks</a></li>
-                </ul>
             </div>
+
         </nav>
         <div class="content">
             <p class="info">Please choose a category</p>
         </div>
+        <audio controls>
+            <source src='' type='audio/mpeg'>
+            Your browser does not support the audio element.
+        </audio>
     </div>
     <!-- /view -->
     <script src="{% static 'assets/js/classie.js' %}"></script>
@@ -124,7 +122,7 @@
                     var content = "";
                     responseJson.forEach(function (element) {
                         content = content
-                                + "<li class='product' style='background-color: #1c1d22;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url(\""
+                                + "<li class='letter-box' style='background-color: #1c1d22;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url(\""
                                 + element.l_to_img
                                 + "\");'>"
                                 + "<div class='title'>"
@@ -143,14 +141,8 @@
                     gridWrapper.innerHTML = content;
                 }
             };
-            xhttp.open("GET", "ajax", true);
+            xhttp.open("GET", "ajax?q=" + itemName, true);
             xhttp.send();
-            //
-            //     var content = ""
-            //     dummyData.forEach(function(element) {
-            //         content = content + "<li class=\"product\">" + element + "</li>" + "\n";
-            //     });
-            //     gridWrapper.innerHTML = '<ul class="products">' + content + '<ul>';
         }
     })();
     </script>

@@ -12,5 +12,5 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def ajax(request):
-    homedata = Letter.objects.all().values() #{ "Stalk Vegetables": ["test", "ok"]}
+    homedata = Letter.objects.all().values()
     return JsonResponse(list(homedata), safe=False)

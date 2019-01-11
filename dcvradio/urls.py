@@ -20,6 +20,6 @@ from homepage import views as homeView
 
 urlpatterns = [
     url(r'^admin', admin.site.urls),
-    url(r'^home', homeView.home),
     url(r'^ajax', homeView.ajax),
+    url(r'', homeView.home),
 ]

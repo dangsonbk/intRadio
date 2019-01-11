@@ -240,7 +240,7 @@ a:hover {
     text-align: center;
 }
 
-.product {
+.letter-box {
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -249,7 +249,7 @@ a:hover {
     position: relative;
 }
 
-.product .title {
+.letter-box .title {
     color: #ffffff;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
@@ -259,7 +259,7 @@ a:hover {
     top: 0;
 }
 
-.product .fromicon {
+.letter-box .fromicon {
     color: #ffffff;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.8); /* Black background with 0.5 opacity */
@@ -270,7 +270,7 @@ a:hover {
     left: 5px;
 }
 
-.product .text {
+.letter-box .text {
     color: #ffffff;
     font-size: 14px;
     background: rgb(0, 0, 0); /* Fallback color */
@@ -282,9 +282,14 @@ a:hover {
     padding: 3px;
 }
 
-.product .text p{
+.letter-box .text p{
     margin:0px;
     padding:0px;
+}
+
+audio{
+    position: absolute;
+    bottom: 10px;
 }
 
 
