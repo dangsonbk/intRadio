@@ -50,8 +50,8 @@
                 </ul>
                 <!-- Submenu 2 -->
                 <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Relay Encouragement Program">
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2018</a></li>
-                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">2019</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">REP-2018</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">REP-2019</a></li>
                 </ul>
                 <!-- Submenu 3 -->
                 <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Members">
@@ -67,12 +67,19 @@
         <div class="content">
             <p class="info">Please choose a category</p>
         </div>
-        <audio controls>
-            <source src='' type='audio/mpeg'>
+        <audio controls autoplay loop id='audio_player'>
+            <source id='audio_src' src='https://c1-ex-swe.nixcdn.com/Sony_Audio52/ThanhXuan-DaLAB-5773854.mp3' type='audio/mpeg'>
             Your browser does not support the audio element.
         </audio>
     </div>
     <!-- /view -->
+    <script>
+        function play(songURL){
+            document.getElementById("audio_src").src = songURL;
+            document.getElementById("audio_player").load();
+            document.getElementById("audio_player").play();
+        }
+    </script>
     <script src="{% static 'assets/js/classie.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script>
@@ -122,19 +129,22 @@
                     var content = "";
                     responseJson.forEach(function (element) {
                         content = content
+                                // I'm lazy as fack, don't blame me for this code
                                 + "<li class='letter-box' style='background-color: #1c1d22;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url(\""
                                 + element.l_to_img
                                 + "\");'>"
                                 + "<div class='title'>"
                                 + element.l_title
                                 + "</div>"
+                                + "<a href='javascript:play(\"" + element.l_audio + "\")'><img class='playicon' src='{% static 'assets/img/play-button.png' %}'/></a>"
                                 + "<div class='fromicon' style='background-color: #1c1d22;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url(\""
                                 + element.l_from_img
                                 + "\");'></div>"
                                 + "<div class='text'>"
-                                + "<p>" + element.l_from + "</p>"
-                                + "<p>" + element.l_to + "</p>"
+                                + "<p>From: " + element.l_from + "</p>"
+                                + "<p>To: " + element.l_to + "</p>"
                                 + "</div>"
+                                // + "<div class='viewcontenticon'><img class='playicon' src='{% static 'assets/img/document.png' %}'/></div>"
                                 + "</li>"
                                 + "\n";
                     });

@@ -242,7 +242,7 @@ a:hover {
 
 .letter-box {
     display: inline-block;
-    width: 200px;
+    width: 300px;
     height: 200px;
     margin: 10px;
     border-radius: 5px;
@@ -254,7 +254,7 @@ a:hover {
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     position: absolute;
-    width: 200px;
+    width: 300px;
     padding: 5px;
     top: 0;
 }
@@ -263,11 +263,19 @@ a:hover {
     color: #ffffff;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.8); /* Black background with 0.5 opacity */
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     bottom: 5px;
     left: 5px;
+}
+
+.letter-box .playicon {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 64px;
+    left: 120px;
 }
 
 .letter-box .text {
@@ -275,11 +283,19 @@ a:hover {
     font-size: 14px;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.8); /* Black background with 0.5 opacity */
-    width: 120px;
+    width: 230px;
     position: absolute;
     bottom: 5px;
-    left: 75px;
+    left: 60px;
     padding: 3px;
+}
+
+.letter-box .viewcontenticon {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 5px;
+    right: 70px;
 }
 
 .letter-box .text p{
