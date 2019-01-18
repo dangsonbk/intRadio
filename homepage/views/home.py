@@ -13,7 +13,7 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def ajax(request):
-    request_cat = request.GET['q']
+    request_cat = request.GET['q'].lower()
     cat = Category.objects.get(slug=request_cat)
     print(cat)
     homedata = Letter.objects.filter(category=cat).values()
